@@ -980,7 +980,7 @@ bullet-marquee[bullet-pause="true"]:where(:hover,:focus) .projectile { animation
 bullet-marquee[bullet-reverse="true"] .projectile { animation-direction: reverse }
 
 @keyframes bulletMarquee { from { transform: translateX(0) } to { transform: translateX(calc(-100% * var(--tlf, 1))) } }
-@keyframes bulletMarqueeRTL { from { transform: translateX(0) } to { transform: translateX(calc(100% * var(--tlf, 1))) } }
+@keyframes bulletMarqueeRTL { from { transform: translateX(0) } to { transform: translateX(calc(100% * var(--tlf, 1))) } } }
 
 /*** Product card */
 .product .cards { --cardsFontSize: 1.4rem; --h4Size: var(--cardsFontSize); max-width: 100%; width: 100%; gap: var(--globalBorderWidth); border-block-end: var(--globalBorder); font-size: var(--cardsFontSize) }
@@ -1606,3 +1606,21 @@ section.faq x-cell:nth-child(3n) { border-inline-end:none }
 /* RTL fixes */
 [dir="rtl"] .disclosure__list { right: initial; left: 0 }
 [dir="rtl"] select { padding-inline-start: 53px }
+
+/* Ensure the search engine container is relatively positioned */
+search-engine {
+  position: relative;
+  width: 100%;
+}
+
+/* Position search results absolutely */
+predictive-search .predictive-search {
+  position: absolute;
+  top: 100%; /* Positions below the search input */
+  left: 0;
+  right: 0;
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+  background: white; /* Or your desired background color */
+  z-index: 1000;
+}
