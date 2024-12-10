@@ -40,6 +40,22 @@ class SearchForm extends HTMLElement {
         this.onChange(event);
       }, 300).bind(this))
     }
+
+    // Add click outside handler
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    document.addEventListener('click', this.handleClickOutside);
+  }
+
+  handleClickOutside(event) {
+    // Check if click is outside the search modal
+    if (!this.contains(event.target) && !event.target.closest('.fire-search')) {
+      this.close();
+    }
+  }
+
+  // Add cleanup in case element is removed
+  disconnectedCallback() {
+    document.removeEventListener('click', this.handleClickOutside);
   }
 
   toggleResetButton() {
