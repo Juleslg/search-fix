@@ -785,7 +785,7 @@ video-player .video-progress::after {
 .hero-double x-flex.contents { position: absolute; inset: 0; z-index: 1; }
 .hero-double x-flex.contents .hasBg { display: block }
 
-@media (max-width: 777px) { .hero-double .title { margin: calc(var(--padding) + var(--margin)); max-width: calc(100% - var(--padding) * 2) } } }
+@media (max-width: 777px) { .hero-double .title { margin: calc(var(--padding) + var(--margin)); max-width: calc(100% - var(--padding) * 2) } }
 
 /* Hero Image + text */
 .image-text { 
@@ -1266,7 +1266,7 @@ body.hpsticky .events .eventHeader {  top: calc(var(--headerHeight, 0px) - var(-
     mask-image: linear-gradient(rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%)
 }
 
-@media (max-width: 777px) {  :where(.listing-page, .search-page) .intro > x-grid > x-cell:empty { display: none } .listing-page .intro .featured { border-block-end: 0 } } }
+@media (max-width: 777px) {  :where(.listing-page, .search-page) .intro > x-grid > x-cell:empty { display: none } .listing-page .intro .featured { border-block-end: 0 } }
 
 .loadmore:not(:empty) { text-align: center; border-block-end: var(--globalBorder) }
 .loadmore a { display: inline-block; padding: var(--padding) }
@@ -1606,37 +1606,3 @@ section.faq x-cell:nth-child(3n) { border-inline-end:none }
 /* RTL fixes */
 [dir="rtl"] .disclosure__list { right: initial; left: 0 }
 [dir="rtl"] select { padding-inline-start: 53px }
-
-/* Add these styles */
-search-engine main-search .search-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh; /* Adjust as needed */
-}
-
-search-engine main-search .search-input-stack {
-  max-width: 600px; /* Adjust width as needed */
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Hide the search title and close button */
-search-engine .search-title,
-search-engine .search-close {
-  display: none;
-}
-
-/* Keep input centered */
-search-engine main-search input[type="search"] {
-  text-align: center;
-}
-
-/* Optional: Style the search icon */
-search-engine main-search .g-search {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
