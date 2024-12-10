@@ -1624,3 +1624,26 @@ predictive-search .predictive-search {
   background: white; /* Or your desired background color */
   z-index: 1000;
 }
+
+/* Position search results absolutely (if appropriate) */
+predictive-search .predictive-search {
+    position: absolute;
+    top: calc(100% + 10px); /* Adjust as needed to position below the search input */
+    left: 0;
+    right: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    z-index: 1000;
+    display: block; /* Ensure it's displayed */
+  }
+  
+  /* Ensure the predictive search is visible */
+  predictive-search[open] .predictive-search {
+    display: block;
+  }
+  
+  /* Hide the predictive search when not open */
+  predictive-search:not([open]) .predictive-search {
+    display: none;
+  }

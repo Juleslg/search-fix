@@ -44,7 +44,8 @@
   </main-search>
   {%- if settings.predictive_search_enabled -%}
   <predictive-search data-loading-text="{{ 'general.accessibility.loading' | t }}">
-    <div class="predictive-search">
+    <!-- The `id` and `role` attributes are crucial -->
+    <div id="predictive-search" class="predictive-search" role="listbox">
       <!-- Search results will be injected here -->
     </div>
   </predictive-search>
