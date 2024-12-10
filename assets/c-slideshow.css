@@ -1,0 +1,53 @@
+coretex-slideshow { 
+    display: block; position: relative; overflow: clip; width: 100%; min-height: var(--heightDesktop); border-bottom: var(--globalBorder); 
+    @media (max-width: 777px) {
+        min-height: var(--heightMobile);
+    }
+}
+
+coretex-slideshow li { margin: 0 }
+coretex-slideshow [slideshow-viewport] { display: flex; align-items: flex-start }
+coretex-slideshow [slideshow-slide] {  position: relative; flex: 0 0 100%; user-select: none }
+
+coretex-slideshow [slideshow-slide] img { 
+    width: 100%;
+    height: var(--heightDesktop, 700px);
+    object-fit: cover;
+    object-position: var(--imagePosition);
+
+    @media (max-width: 777px) {
+        height: var(--heightMobile, 600px);
+    }
+}
+
+coretex-slideshow [slideshow-slide] .meta {
+    --colorHeadings: var(--slideMetaHColor); 
+    --buttonColor: var(--slideMetaHColor); 
+    --buttonBgColor: var(--slideMetaHBg); 
+
+    color: var(--slideMetaHColor); 
+    position: absolute; 
+    padding: var(--padding);
+
+    @media (max-width: 777px) {
+        bottom: 0; left: 0;
+    }
+}
+
+coretex-slideshow slider-controls {
+    display: block;
+    padding: var(--margin);
+
+    [control-dots] { gap: var(--margin) }
+    
+    button.control-dot {
+        --buttonBgColor: transparent;
+        --buttonPadding: 0.4rem;
+        --buttonRadius: 100vw;
+        border: var(--globalBorder);
+        width: 0.4rem;
+        height: 0.4rem;
+
+        &.is-selected { --buttonBgColor: var(--color) }
+    }
+}

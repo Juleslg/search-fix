@@ -1,0 +1,82 @@
+<section id="mobmenu">
+<div class="mobnav">
+{%- comment -%} Controls {%- endcomment -%}
+<x-grid columns="2" class="header">
+	<x-cell ps="center start"><h3 class="h3 headingTitle">{{ 'header.menu' | t }}</h3></x-cell>
+	<x-cell ps="center end">
+		<button class="is-blank shrink-menu no-js-hidden">
+            <span class="visually-hidden">{{ 'header.close' | t }}</span>
+            {%- render 'global-icon' with 'x' -%}
+        </button>
+		<noscript><a href="#!" class="button is-blank shrink-search"><span class="visually-hidden">{{ 'header.close' | t }}</span>{%- render 'global-icon' with 'x' -%}</a></noscript>
+	</x-cell>
+</x-grid>
+
+<nav>
+{%- comment -%} Quick links {%- endcomment -%}
+{%- if accountLinkMob -%}
+<x-grid columns="2" class="bordi quicks">
+	{%- if customer -%}
+		<x-cell><a href="{{ routes.account_url }}">{{ 'header.account' | t }}</a></x-cell>
+		<x-cell>{{ 'header.logOut' | t | customer_logout_link }}</x-cell>
+	{%- else -%}
+		<x-cell>{{ 'header.register' | t | customer_register_link }}</x-cell>
+		<x-cell>{{ 'header.login' | t | customer_login_link }}</x-cell>
+	{%- endif -%}
+</x-grid>
+{%- endif -%}
+
+{%- comment -%} Menu links {%- endcomment -%}
+<x-grid columns="1" class="bordi menus">
+{%- for link in linklists[linklist].links -%}
+	<x-cell>
+	<ul class="no-style">
+	{% if link.links == blank %}
+		<li><a href="{{ link.url }}" class="no-style lv1l">{{ link.title }}</a></li>
+	{% else %}
+		<li><details class="dm lv1 closex" id="Details-main-{{ forloop.index }}">
+		<summary class="dropdown-caret">{{ link.title }}</summary>
+		<details-menu id="Menu-main-{{ forloop.index }}">
+		<ul class="no-style">
+		{%- for child_link in link.links -%} 
+			{% if child_link.links == blank %}
+				<li><a href="{{ child_link.url }}" class="no-style lv1l">{{ child_link.title }}</a></li>
+			{%- else -%}
+				<li><details class="dm lv2 closex" id="Details-main-{{ forloop.index }}">
+				<summary class="dropdown-caret">{{ child_link.title }}</summary>
+				<details-menu id="Menu-main-{{ forloop.index }}">
+				<ul class="no-style">
+				{%- for grandchild_link in child_link.links -%} 
+					{%- if grandchild_link.links == blank -%}
+						<li><a href="{{ grandchild_link.url }}" class="no-style lv1l">{{ grandchild_link.title }}</a></li>
+					{%- else -%}
+						<li><details class="dm lv3 closex" id="Details-main-{{ forloop.index }}">
+						<summary class="dropdown-caret">{{ grandchild_link.title }}</summary>
+						<details-menu id="Menu-main-{{ forloop.index }}">
+						<ul class="no-style">
+						{%- for grandgrandchild_link in grandchild_link.links -%} 
+							{%- if grandgrandchild_link.links == blank -%}
+								<li><a href="{{ grandgrandchild_link.url }}" class="no-style">{{ grandgrandchild_link.title }}</a></li>
+							{%- endif -%}
+						{%- endfor -%}
+						</ul>
+						</details-menu>
+						</details></li>
+					{%- endif -%}
+				{%- endfor -%}
+				</ul>
+				</details-menu>
+				</details></li>
+			{%- endif-%}
+			{%- endfor -%}
+		</ul>
+		</details-menu>
+		</details></li>
+	{% endif %}
+	</ul>
+	</x-cell>
+{%- endfor -%}
+</x-grid>
+</nav>
+</div>
+</section>

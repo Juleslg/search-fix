@@ -1,0 +1,23 @@
+<section class="custom-html" {{ block.shopify_attributes }}>
+  {{- section.settings.liquid -}}
+</section>
+
+{% schema %}
+{
+  "name": "Custom Liquid",
+  "enabled_on": { "groups": ["header", "footer"] },
+  "presets": [
+    {
+      "name": "Custom Liquid",
+      "category": "Advanced layout"
+    }
+  ],
+  "settings": [
+    {
+      "type": "liquid",
+      "label": "Custom Liquid",
+      "id": "liquid"
+    }
+  ]
+}
+{% endschema %}

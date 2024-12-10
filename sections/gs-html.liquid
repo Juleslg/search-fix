@@ -1,0 +1,23 @@
+<section class="custom-html" {{ block.shopify_attributes }}>
+    {{- section.settings.html -}}
+</section>
+
+{% schema %}
+{
+  "name": "Custom HTML",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "presets": [
+    {
+      "name": "Custom HTML",
+      "category": "Advanced layout"
+    }
+  ],
+  "settings": [
+    {
+      "type": "html",
+      "label": "HTML",
+      "id": "html"
+    }
+  ]
+}
+{% endschema %}

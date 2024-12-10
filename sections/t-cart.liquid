@@ -1,0 +1,35 @@
+{%- render 'c-cart', location: 'page', blocks: section.blocks -%}
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [ ],
+  "blocks": [
+    {
+        "type": "@app"
+    },
+    {
+        "type": "checkbox",
+        "name": "Checkbox",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "I have read and agree with terms and privacy policy."
+          },
+          {
+            "type": "checkbox",
+            "id": "requiredInputCheckbox",
+            "label": "Required input",
+            "info": "Make the input required",
+            "default": true
+          }
+        ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["cart"]
+  }
+}
+{% endschema %}
