@@ -10,13 +10,12 @@
 -%}
 
 <search-engine id="searchbar">
-    <button class="is-blank shrink-search no-js-hidden">
-        {%- render 'global-icon' with 'x' -%}
-    </button>
 
-    <x-grid columns="1" id="SearchControllers" class="header">
-        <x-cell ps="center start">
-            <h3 class="h3 headingTitle">{{ 'header.search' | t }}</h3>
+    <x-grid columns="2" id="SearchControllers" class="header">
+        <x-cell ps="center start"><h3 class="h3 headingTitle">{{ 'header.search' | t }}</h3></x-cell>
+        <x-cell ps="center end">
+            <button class="is-blank shrink-search no-js-hidden">{%- render 'global-icon' with 'x' -%}</button>
+            <noscript><a href="#!" class="button is-blank shrink-search">{%- render 'global-icon' with 'x' -%}</a></noscript>
         </x-cell>
     </x-grid>
 

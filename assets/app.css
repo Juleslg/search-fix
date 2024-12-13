@@ -386,39 +386,13 @@ body.open-search search-engine {
   top: 0;
   left: 0;
   right: 0;
-  background: var(--bgColor);
+  background: white;
   z-index: 1000;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Add styles for the close button */
-search-engine .shrink-search {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
 
-/* Update the search header layout */
-search-engine #SearchControllers.header {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 20px;
-}
-
-/* Adjust the search input container */
-search-engine .search-section {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 20px;
-}
 
 search-engine .header { padding-inline: var(--padding); border-block: var(--globalBorder) }
 
@@ -815,7 +789,7 @@ video-player .video-progress::after {
 .hero-double x-flex.contents { position: absolute; inset: 0; z-index: 1; }
 .hero-double x-flex.contents .hasBg { display: block }
 
-@media (max-width: 777px) { .hero-double .title { margin: calc(var(--padding) + var(--margin)); max-width: calc(100% - var(--padding) * 2) } } }
+@media (max-width: 777px) { .hero-double .title { margin: calc(var(--padding) + var(--margin)); max-width: calc(100% - var(--padding) * 2) } }
 
 /* Hero Image + text */
 .image-text { 
