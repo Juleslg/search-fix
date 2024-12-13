@@ -350,6 +350,10 @@ button.is-primary:hover,.button.is-primary:hover { --buttonBorderHover: black !i
 
 /* Search engine */
 
+predictive-search {
+    min-width: 100%;
+}
+
 /** Resets */
 predictive-search, main-search, search-engine { display: block; flex: 1 }
 search-engine { display: none }
