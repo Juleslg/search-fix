@@ -152,24 +152,13 @@
             "openNewWindow": false
           }
         },
-        "image_YrXXVG": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "span": "span=\"1\" span-s=row",
-            "image": "shopify://shop_images/1217_c8f92e9bfa-eldovado-towel-8001-22-26-c-original.jpg",
-            "imgFullheight": true,
-            "url": "",
-            "openNewWindow": false
-          }
-        },
         "image_jyCjLL": {
           "type": "image",
           "settings": {
             "span": "span=\"2\" span-s=row",
             "image": "shopify://shop_images/selected-DSCF4126_06236_outdoor_shortsleeveshirt.jpg",
             "imgFullheight": true,
-            "url": "",
+            "url": "shopify://products/ecitah-shirt",
             "openNewWindow": false
           }
         }
@@ -179,7 +168,6 @@
         "image_pjtzyU",
         "image_Cqf8XC",
         "image_X9Hd9j",
-        "image_YrXXVG",
         "image_jyCjLL"
       ],
       "custom_css": [
