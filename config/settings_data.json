@@ -45,6 +45,8 @@
     "socialWhatsapp": "+4921513871212",
     "showBreadcrumbs": false,
     "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
     "cart_type": "drawer-side",
     "cart_vendor": false,
     "cart_dynamicButtons": false,
