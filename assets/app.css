@@ -1018,7 +1018,23 @@ bullet-marquee[bullet-reverse="true"] .projectile { animation-direction: reverse
 .product .cards .card-image .secondary { opacity: 0; transition: opacity 100ms var(--easeInOutQuad) }
 .product .cards .card-image:where(:hover,:focus) .secondary { opacity: 1 }
 
-.product .cards .card-image:has(.secondary):where(:hover,:focus) .primary { opacity: 0; transition: opacity 200ms var(--easeInOutQuad) }
+/*.product .cards .card-image:has(.secondary):where(:hover,:focus) .primary { opacity: 0; transition: opacity 200ms var(--easeInOutQuad) }*/
+@media (hover: hover) {
+    .product .cards .card-image:has(.secondary):where(:hover,:focus) .primary {
+      opacity: 0;
+      transition: opacity 200ms var(--easeInOutQuad);
+    }
+  }
+  
+  /* You can optionally reset things on devices that don’t truly hover: */
+  @media (hover: none) {
+    .product .cards .card-image .secondary {
+      opacity: 0 !important;
+    }
+    .product .cards .card-image .primary {
+      opacity: 1 !important;
+    }
+  }
 
 .product .cards .card-image img {
     position: absolute;
